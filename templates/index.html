@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyber Phishing Detector</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="badge">CYBERSECURITY • URL INTELLIGENCE</div>
+      <h1>Cyber<span>_Phishing</span>_Detector</h1>
+      <p>Analyze a URL for phishing indicators without visiting the target website.</p>
+    </section>
+
+    <section class="card">
+      <form method="post">
+        <label for="url">URL to analyze</label>
+        <div class="input-row">
+          <input id="url" name="url" value="{{ url }}" placeholder="https://example.com/login" required>
+          <button type="submit">Analyze</button>
+        </div>
+      </form>
+    </section>
+
+    {% if result %}
+      {% if result.error %}
+      <section class="card error">{{ result.error }}</section>
+      {% else %}
+      <section class="result-card {{ result.level }}">
+        <div class="result-top">
+          <div>
+            <small>VERDICT</small>
+            <h2>{{ result.verdict }}</h2>
+          </div>
+          <div class="score">{{ result.risk_score }}<span>/100</span></div>
+        </div>
+        <div class="meter"><div style="width: {{ result.risk_score }}%"></div></div>
+        <p class="url">{{ result.url }}</p>
+        <h3>Indicators</h3>
+        <ul>
+          {% for reason in result.reasons %}
+          <li>{{ reason }}</li>
+          {% endfor %}
+        </ul>
+        <p class="note">{{ result.note }}</p>
+      </section>
+      {% endif %}
+    {% endif %}
+
+    <footer>
+      <p>Cyber_Phishing_Detector • Educational security research project</p>
+      <p>Never enter passwords, tokens, or private URLs into a third-party detector.</p>
+    </footer>
+  </main>
+</body>
+</html>

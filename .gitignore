@@ -1,0 +1,13 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+models/*.joblib
+.env
+.env.*
+*.pem
+*.key
+secrets/
+instance/
+.DS_Store

@@ -1,0 +1,31 @@
+:root { font-family: Inter, system-ui, Arial, sans-serif; color: #eaf2ff; background: #07111f; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: radial-gradient(circle at top, #102746, #07111f 55%); }
+.shell { width: min(920px, 92%); margin: auto; padding: 70px 0 35px; }
+.hero { text-align: center; margin-bottom: 30px; }
+.badge { display: inline-block; border: 1px solid #28517e; padding: 8px 12px; border-radius: 999px; font-size: 12px; letter-spacing: .14em; color: #8dc8ff; }
+h1 { font-size: clamp(38px, 7vw, 72px); margin: 18px 0 10px; letter-spacing: -0.05em; }
+h1 span { color: #59d0ff; }
+.hero p { color: #9eb2c9; font-size: 18px; }
+.card, .result-card { background: rgba(13, 29, 49, .9); border: 1px solid #203c5c; border-radius: 22px; padding: 28px; box-shadow: 0 20px 70px rgba(0,0,0,.25); }
+label { display:block; margin-bottom: 10px; color: #a9c1db; }
+.input-row { display:flex; gap:12px; }
+input { flex:1; min-width:0; background:#07111f; color:#fff; border:1px solid #2c4b6c; border-radius:12px; padding:15px; font-size:16px; }
+button { border:0; border-radius:12px; padding:0 22px; font-weight:700; cursor:pointer; background:#59d0ff; color:#03101b; }
+.result-card { margin-top:22px; }
+.result-card.safe { border-color:#2c9b72; }
+.result-card.warning { border-color:#c18a35; }
+.result-card.danger { border-color:#c24a58; }
+.result-top { display:flex; justify-content:space-between; align-items:center; }
+small { color:#88a7c6; letter-spacing:.15em; }
+h2 { margin:7px 0; }
+.score { font-size:42px; font-weight:800; }
+.score span { font-size:14px; color:#89a4bf; }
+.meter { height:9px; background:#14283d; border-radius:99px; overflow:hidden; }
+.meter div { height:100%; background:#59d0ff; }
+.url { color:#86b5de; word-break:break-all; margin-top:20px; }
+li { margin:10px 0; color:#c4d4e5; }
+.note { color:#8097ae; font-size:13px; }
+.error { margin-top:22px; color:#ff9fa9; }
+footer { text-align:center; color:#657e98; font-size:12px; margin-top:35px; }
+@media (max-width: 650px) { .input-row { flex-direction:column; } button { height:50px; } }
